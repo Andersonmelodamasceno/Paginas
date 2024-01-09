@@ -15,4 +15,8 @@ export class FeedService {
   pesquisarPorEmail(email: string): Observable<FeedService | null> {
     return this.http.get<FeedService>(`${this.apiUrl}/${email}`);
   }
+
+  deletarPorEMail(email: string): Observable<any> {
+    return this.http.delete<FeedService>(`${this.apiUrl}/${email}`);
+  }
 }

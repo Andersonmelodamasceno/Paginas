@@ -31,4 +31,20 @@ export class PaginasComponent{
       console.warn('Por favor, insira um email válido.');
     }
   }
+  deletarPorEMail() {
+    if (this.email) {
+      this.FeedService.deletarPorEMail(this.email).subscribe(
+      (response) => {
+        console.log('Feed deletado com sucesso', response);
+      },
+      (error) => {
+        console.error('Erro ao deletar o feed', error)
+      }
+      );
+    } else {
+     console.warn('Por favor, insira um email válido para excluir.');
+    }
+
+  }
+
 }
