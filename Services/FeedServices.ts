@@ -12,6 +12,10 @@ export class FeedService {
 
   constructor(private http: HttpClient) {}
 
+  cadastraPorEmail(data: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}`, data);
+  }
+
   pesquisarPorEmail(email: string): Observable<FeedService | null> {
     return this.http.get<FeedService>(`${this.apiUrl}/${email}`);
   }

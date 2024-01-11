@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FeedService } from 'Services/FeedServices';import { NgModule } from '@angular/core';
+import { FeedService } from 'Services/FeedServices';
+import { NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-paginas',
@@ -10,9 +11,12 @@ export class PaginasComponent{
   firstname: string = 'Anderson';
   lastName: string = 'damasceno';
   email: string = 'dinhomelo_17@hotmail.com';
+  isButtonDisabled: boolean | undefined;
 
 
   constructor(private FeedService: FeedService) { }
+
+
 
   pesquisarPorEmail() {
     if (this.email) {
@@ -44,7 +48,35 @@ export class PaginasComponent{
     } else {
      console.warn('Por favor, insira um email válido para excluir.');
     }
-
   }
 
+  setButtonState(disabled: boolean) {
+    this.isButtonDisabled = disabled;
+  }
+
+  cadastraPorEmail() {
+
+    if (!this.isButtonDisabled) {
+      this.setButtonState(true); // Desabilita o botão
+
+
+    const data = {
+      firstname: this.firstname,
+      lastName: this.lastName,
+      email: this.email
+    };
+
+    this.FeedService.cadastraPorEmail(data).subscribe(
+      (response) => {
+        console.log('Feed cadastrado com sucesso:', response);
+
+
+        this.cadastraPorEmail();
+      },
+      (error) => {
+        console.error('Erro ao cadastrar o feed:', error);
+      }
+    );
+  }
+  }
 }
