@@ -36,3 +36,27 @@ button {
 button:hover {
   background-color: #2980b9;
 }
+
+/* Estilos para o resultado da requisição */
+.novadiv {
+  margin-top: 20px;
+  color: #0066cc;
+  text-align: center;
+  border-radius: 5px;
+  border-color: #0c058c;
+}
+
+/* Estilo para o campo de destaque (firstname) */
+.highlight {
+  color: #0c058c;
+  font-weight: bold;
+}
+
+/* Estilos adicionais para os detalhes do resultado */
+.result-details {
+  margin-top: 10px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

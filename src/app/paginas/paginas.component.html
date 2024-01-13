@@ -4,16 +4,27 @@
   <input type="text" placeholder="email" [(ngModel)]="email">
   <button (click)="pesquisarPorEmail()">Pesquisar</button>
 </div>
-<div *ngIf="resultadoPesquisa">
-  <p>Nome: {{ resultadoPesquisa.firstname }}</p>
-  <p>ID: {{ resultadoPesquisa.id }}</p>
-   <p>Sobrenome: {{ resultadoPesquisa.lastName }}</p>
-  <p>Email: {{ resultadoPesquisa.email }}</p>
+  <div class="result-details">
+    <div class="novadiv" *ngIf="resultadoPesquisa">
+      <div *ngIf="firstname" class="highlight">
+        <p>Nome: {{ firstname }}</p>
+      </div>
+    <p>ID: {{ resultadoPesquisa.id }}</p>
+    <p>Sobrenome: {{ resultadoPesquisa.lastName }}</p>
+    <p>Email: {{ resultadoPesquisa.email }}</p>
+  </div>
 </div>
 
 
 
 
+
+<div class="search-container">
+  <input type="text" placeholder="nome" [(ngModel)]="firstname">
+  <input type="text" placeholder="sobrenome" [(ngModel)]="lastName">
+  <input type="text" placeholder="email" [(ngModel)]="email">
+  <button (click)="deletarPorEMail()">Deletar</button>
+</div>
 
 <div class="search-container">
   <input type="text" placeholder="nome" [(ngModel)]="firstname">
