@@ -23,7 +23,7 @@ export class PaginasComponent{
       this.FeedService.pesquisarPorEmail(this.email).subscribe(
         (response) => {
           console.log('Resposta da solicitação:', response);
-
+          console.log('Resposta do nome', this.firstname)
           // Armazene o resultado da pesquisa
           this.resultadoPesquisa = response;
         },

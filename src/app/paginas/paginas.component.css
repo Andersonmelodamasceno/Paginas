@@ -60,3 +60,22 @@ button:hover {
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+/*Botoes*/
+button.deletar {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e74c3c; /* Vermelho */
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button.deletar:hover {
+  background-color: #c0392b; /* Tom mais escuro de vermelho ao passar o mouse */
+}
+
+
+

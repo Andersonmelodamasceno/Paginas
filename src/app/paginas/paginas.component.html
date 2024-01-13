@@ -23,12 +23,12 @@
   <input type="text" placeholder="nome" [(ngModel)]="firstname">
   <input type="text" placeholder="sobrenome" [(ngModel)]="lastName">
   <input type="text" placeholder="email" [(ngModel)]="email">
-  <button (click)="deletarPorEMail()">Deletar</button>
+  <button class="deletar"(click)="deletarPorEMail()">Deletar</button>
 </div>
 
 <div class="search-container">
   <input type="text" placeholder="nome" [(ngModel)]="firstname">
   <input type="text" placeholder="sobrenome" [(ngModel)]="lastName">
   <input type="text" placeholder="email" [(ngModel)]="email">
-  <button (click)="cadastraPorEmail()">Cadastrar</button>
+  <button style="background-color: #2ecc71; color: white;" (click)="cadastraPorEmail()">Cadastrar</button>
 </div>
