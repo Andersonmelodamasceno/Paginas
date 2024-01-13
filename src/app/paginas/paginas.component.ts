@@ -12,7 +12,7 @@ export class PaginasComponent{
   lastName: string = 'damasceno';
   email: string = 'dinhomelo_17@hotmail.com';
   isButtonDisabled: boolean | undefined;
-
+  resultadoPesquisa: any;
 
   constructor(private FeedService: FeedService) { }
 
@@ -24,8 +24,8 @@ export class PaginasComponent{
         (response) => {
           console.log('Resposta da solicitação:', response);
 
-          this.firstname;
-          this.lastName;
+          // Armazene o resultado da pesquisa
+          this.resultadoPesquisa = response;
         },
         (error) => {
           console.error('Erro na solicitação:', error);
@@ -35,6 +35,7 @@ export class PaginasComponent{
       console.warn('Por favor, insira um email válido.');
     }
   }
+  /* ----------------------------------------------------------- */
   deletarPorEMail() {
     if (this.email) {
       this.FeedService.deletarPorEMail(this.email).subscribe(
